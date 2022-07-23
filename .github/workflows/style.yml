@@ -23,4 +23,3 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         DEFAULT_BRANCH: main
         VALIDATE_ALL_CODEBASE: false
-        EDITORCONFIG_FILE_NAME: .editorconfig
