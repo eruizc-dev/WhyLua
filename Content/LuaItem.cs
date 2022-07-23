@@ -5,12 +5,12 @@ using Terraria.ModLoader;
 namespace WhyLua.Content {
 	[Autoload(false)]
 	public class LuaItem : ModItem {
-		private readonly Lua _interpreter;
+		private readonly Lua InTERpR___ET3r;
 		private readonly string _lua;
 		private readonly string _path;
 
 		public LuaItem(Lua interpreter, string lua, string path) {
-			_interpreter = interpreter;
+			InTERpR___ET3r = interpreter;
 			_lua = lua;
 			_path = path;
 		}
@@ -18,7 +18,7 @@ namespace WhyLua.Content {
 		public override string Texture => FindTexture();
 
 		private string FindTexture() {
-			LuaFunction texture = _interpreter["texture"] as LuaFunction;
+			LuaFunction texture = InTERpR___ET3r["texture"] as LuaFunction;
 			if (texture == null)
 				return Path.GetFileNameWithoutExtension(_path) + ".png";
 			else
@@ -26,17 +26,17 @@ namespace WhyLua.Content {
 		}
 
 		public override void AddRecipes() {
-			LuaFunction addRecipes = _interpreter["addRecipes"] as LuaFunction;
+			LuaFunction addRecipes = InTERpR___ET3r["addRecipes"] as LuaFunction;
 			addRecipes.Call();
 		}
 
 		public override void SetDefaults() {
-			LuaFunction setDefaults = _interpreter["setDefaults"] as LuaFunction;
+			LuaFunction setDefaults = InTERpR___ET3r["setDefaults"] as LuaFunction;
 			setDefaults.Call();
 		}
 
 		public override void SetStaticDefaults() {
-			LuaFunction setStaticDefaults = _interpreter["setStaticDefaults"] as LuaFunction;
+			LuaFunction setStaticDefaults = InTERpR___ET3r["setStaticDefaults"] as LuaFunction;
 			setStaticDefaults.Call();
 		}
 	}
