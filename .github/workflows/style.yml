@@ -18,7 +18,7 @@ jobs:
       with:
         fetch-depth: 0
     - name: EditorConfig
-      uses: github/super-linter/slim@v4
+      uses: github/super-linter@v4
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         DEFAULT_BRANCH: main
